@@ -1,0 +1,43 @@
+<!-- Paso 3: vincular el HTML -->
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+  <label>
+    Nombre
+    <input formControlName="nombre" placeholder="Ej. Bodega Norte" autocomplete="off">
+  </label>
+  <!-- Paso 4: retroalimentación solo si el control fue tocado -->
+  @if (form.controls.nombre.touched && form.controls.nombre.invalid) {
+    <small>
+      @if (form.controls.nombre.hasError('maxlength')) {
+        El nombre no puede superar 100 caracteres
+      } @else {
+        El nombre es obligatorio
+      }
+    </small>
+  }
+
+  <label>
+    Ubicación
+    <input formControlName="ubicacion" placeholder="Ej. Bogotá - Zona Industrial" autocomplete="off">
+  </label>
+  @if (form.controls.ubicacion.touched && form.controls.ubicacion.invalid) {
+    <small>
+      @if (form.controls.ubicacion.hasError('maxlength')) {
+        La ubicación no puede superar 150 caracteres
+      } @else {
+        La ubicación es obligatoria
+      }
+    </small>
+  }
+
+  <button type="submit" [disabled]="saving()">
+    {{ saving() ? 'Guardando…' : 'Registrar bodega' }}
+  </button>
+
+  @if (success()) {
+    <p role="status">{{ success() }}</p>
+  }
+  @if (error()) {
+    <p role="alert">{{ error() }}</p>
+  }
+</form>

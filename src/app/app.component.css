@@ -1,0 +1,13 @@
+header { padding: 2rem 1rem 1rem; max-width: 1100px; margin: 0 auto; }
+header h1 { margin: 0; font-size: 1.7rem; }
+header p { margin: .3rem 0 0; color: #5b6472; }
+main {
+  display: grid; gap: 1.2rem; padding: 1rem; max-width: 1100px; margin: 0 auto;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr); align-items: start;
+}
+.card { background: #fff; border: 1px solid #e3e6ec; border-radius: 10px; padding: 1.2rem 1.4rem; box-shadow: 0 1px 3px rgba(16, 24, 40, .06); }
+.card h2 { margin: 0 0 .6rem; font-size: 1.1rem; }
+.info { color: #6b7280; }
+.alert { background: #fdecea; color: #a12622; padding: .8rem 1rem; border-radius: 6px; }
+.alert button { margin-left: .6rem; padding: .3rem .7rem; border: 1px solid #a12622; background: transparent; color: #a12622; border-radius: 5px; cursor: pointer; }
+@media (max-width: 800px) { main { grid-template-columns: 1fr; } }

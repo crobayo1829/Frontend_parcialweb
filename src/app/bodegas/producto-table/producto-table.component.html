@@ -1,0 +1,31 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Bodega</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (f of filas; track f.clave) {
+        <tr>
+          @if (f.producto) {
+            <td>{{ f.producto.nombre }}</td>
+            <td>{{ f.producto.precio | number: '1.0-0' }}</td>
+            <td>{{ f.producto.cantidad }}</td>
+          } @else {
+            <td colspan="3"><em>Sin productos</em></td>
+          }
+          <td>{{ f.bodega }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">No hay bodegas registradas.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<p>{{ totalBodegas }} bodega(s) · {{ totalProductos }} producto(s)</p>

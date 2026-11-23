@@ -1,0 +1,18 @@
+form { display: flex; flex-direction: column; gap: .35rem; }
+label { display: flex; flex-direction: column; gap: .3rem; font-weight: 600; font-size: .9rem; margin-top: .6rem; }
+input {
+  padding: .6rem .7rem; border: 1px solid #c5cad3; border-radius: 6px;
+  font: inherit; font-weight: 400;
+}
+input:focus { outline: 2px solid #2f6fed; outline-offset: 1px; border-color: #2f6fed; }
+input.ng-invalid.ng-touched { border-color: #c62828; }
+.error { color: #c62828; }
+button {
+  margin-top: 1rem; padding: .65rem 1rem; border: 0; border-radius: 6px;
+  background: #2f6fed; color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+}
+button:hover:not(:disabled) { background: #2459c4; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+.msg { margin: .8rem 0 0; padding: .6rem .8rem; border-radius: 6px; font-size: .9rem; }
+.ok { background: #e6f4ea; color: #1e6b36; }
+.fail { background: #fdecea; color: #a12622; }

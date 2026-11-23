@@ -1,0 +1,25 @@
+<header>
+  <h1>Sistema de bodegas y productos</h1>
+  <p>Registra bodegas y consulta los productos asociados a cada una.</p>
+</header>
+
+<main>
+  <section>
+    <h2>Registrar bodega</h2>
+    <app-bodega-form (created)="load()" />
+  </section>
+
+  <section>
+    <h2>Productos por bodega</h2>
+    @if (error()) {
+      <p role="alert">
+        {{ error() }}
+        <button type="button" (click)="load()">Reintentar</button>
+      </p>
+    } @else if (loading() && bodegas().length === 0) {
+      <p>Cargando…</p>
+    } @else {
+      <app-producto-table [bodegas]="bodegas()" />
+    }
+  </section>
+</main>
