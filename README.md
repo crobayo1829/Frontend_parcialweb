@@ -45,14 +45,14 @@ El backend ya habilita CORS para `http://localhost:4200`.
 ```
 src/app
 ├── models/
-│   ├── bodega.model.ts          Bodega y NewBodega (espejo de BodegaDto)
+│   ├── bodega.model.ts          Bodega y NewBodega
 │   └── producto.model.ts        Producto y ProductoConBodega (fila de la tabla)
 ├── services/
-│   └── bodega.service.ts        HttpClient: list() → GET /bodegas · create() → POST /bodegas
+│   └── bodega.service.ts        HttpClient: list() - GET /bodegas · create() - POST /bodegas
 ├── bodegas/
 │   ├── bodega-form/             Componente: formulario de registro
 │   └── producto-table/          Componente: tabla de productos con su bodega
-├── app.component.*              Contenedor: carga los datos y conecta formulario ↔ tabla
+├── app.component.*              Contenedor: carga los datos y conecta formulario - tabla
 ├── app.config.ts                provideHttpClient(), localización es-CO (2.500.000)
 └── app.routes.ts
 ```
